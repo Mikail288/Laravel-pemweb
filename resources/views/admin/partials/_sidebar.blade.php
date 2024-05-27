@@ -19,6 +19,13 @@
         <span>Student</span>
       </a>
     </li>
+
+    <li class="nav-item">
+      <a class="nav-link @if ($currentRoute != 'admin/student') collapsed @endif" href="course">
+        <i class="bi bi-user"></i>
+        <span>Course</span>
+      </a>
+    </li>
   </ul>
 
 </aside><!-- End Sidebar-->
