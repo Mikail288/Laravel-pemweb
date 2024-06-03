@@ -31,10 +31,10 @@
                         <!-- <td>{{ $course->class }}</td> -->
                         <td>
                             <a href="{{ route('course.edit', $course->id)}}" class="btn btn-warning">Edit</a>
-                            <form action="/admin/course/delete/{{$course->id}}" method="post">
+                            <form action="/admin/course/delete/{{$course->id}}" method="post" class="d-inline">
                                 @csrf
                                 @method('delete')
-                                <button class="btn btn-danger" type="submit" onclick="return confirm('Apakah anda yakin?')">Delete</button>
+                                <button class="btn btn-danger d-inline" type="submit" onclick="return confirm('Apakah anda yakin?')">Delete</button>
                             </form>
                         </td>
                     </tr>

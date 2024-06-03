@@ -13,4 +13,8 @@ class Course extends Model
 
     protected $fillable = ['name','category','desc'];
 
+    public function students(){
+        return $this->hasMany(Student::class);
+    }
+
 }

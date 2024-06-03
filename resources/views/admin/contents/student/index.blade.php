@@ -21,6 +21,7 @@
                         <th>NIM</th>
                         <th>Major</th>
                         <th>Class</th>
+                        <th>Course</th>
                         <th>Action</th>
                     </tr>
                     @foreach($students as $student)
@@ -30,6 +31,7 @@
                         <td>{{ $student->nim }}</td>
                         <td>{{ $student->major }}</td>
                         <td>{{ $student->class }}</td>
+                        <td>{!! $student->course->name ?? '<span class="badge bg-danger">Belum mengikuti course</span>' !!}</td>
                         <td>
                             <a href="{{ route('student.edit', $student->id)}}" class="btn btn-warning">Edit</a>
                             <form action="/admin/student/delete/{{$student->id}}" method="post">
