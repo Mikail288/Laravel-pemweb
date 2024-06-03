@@ -12,7 +12,7 @@
     <section class="section">
      <div class="card">
         <div class="card-body py-4">
-            <!-- <a href="student/create" class="btn btn-primary m-3">+ student</a> -->
+            <a href="course/create" class="btn btn-primary m-3">+ Course</a>
             <div class="table-responsive">
                 <table class="table">
                     <tr>
@@ -30,8 +30,12 @@
                         <td>{{ $course->desc }}</td>
                         <!-- <td>{{ $course->class }}</td> -->
                         <td>
-                            <a href="#" class="btn btn-warning">Edit</a>
-                            <a href="#" class="btn btn-danger">Delete</a>
+                            <a href="{{ route('course.edit', $course->id)}}" class="btn btn-warning">Edit</a>
+                            <form action="/admin/course/delete/{{$course->id}}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button class="btn btn-danger" type="submit" onclick="return confirm('Apakah anda yakin?')">Delete</button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach
